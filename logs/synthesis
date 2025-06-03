@@ -1,0 +1,154 @@
+
+                            Design Compiler (R) NXT 
+
+               Version T-2022.03-SP4 for linux64 - Aug 24, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Initializing gui preferences from file  /home1/BPPD08/NavEeN/.synopsys_dc_gui/preferences.tcl
+Warning: Cannot use command line editor for terminal type 'xterm-256color'.  (UI-74)
+4.1.1
+set_host_options -max_cores 16
+Warning: You requested 16 cores. However, load on host mavenserver-RH2 is 43.94. Tool will ignore the request and use 1 cores. (UIO-231)
+1
+dcnxt_shell> #################
+#Global Variables
+#################
+#################
+#Global Variables
+#################
+set DESIGN_NAME "raven_soc"    ;#  The name of the design
+raven_soc
+set OUTPUTS_DIR "../dc_outputs/"
+../dc_outputs/
+set SCRIPTS "../files/"
+../files/
+set DESIGN_STYLE "hier" ; #hier or flat
+hier
+set PHYSICAL_HIERARCHY_LEVEL "top" ; #bottom or top
+top
+set DC_BLOCK_ABSTRACTION_DESIGNS ""
+set DDC_HIER_DESIGNS "spimemio simpleuart"
+spimemio simpleuart
+set UPF_MODE golden
+golden
+set UPF_FILE "${SCRIPTS}/${DESIGN_NAME}.upf"
+../files//raven_soc.upf
+set DCRM_NDM_LIBRARY_NAME "${DESIGN_NAME}.ndm"
+raven_soc.ndm
+set TECH_FILE "/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf"
+/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf
+set  REFERENCE_LIBRARY "/home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/  /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm"
+/home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/  /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm
+set_tlu_plus_files -max_tluplus /home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus -min_tluplus /home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus  -tech2itf_map /home1/14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map
+Error: unknown command 'set_tlu_plus_files' (CMD-005)
+################## link library #################################################
+set link_library "/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \ 
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db \
+		/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db \
+	         			/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+	        			 /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db" 	       
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+################ target library###################################################
+set TARGET_LIBRARY_FILES "/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db \
+		/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db \
+	         			/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+	        			 /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db"
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+##################################
+#RTL Variables
+##################################
+if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "top"} {
+  # For a hierarchical flow, add the block-level results directories to the
+  # search path to find the block-level design files.
+  set HIER_DESIGNS "${DDC_HIER_DESIGNS} ${DC_BLOCK_ABSTRACTION_DESIGNS}"
+  foreach design $HIER_DESIGNS {
+    lappend search_path ../../${design}/outputs/
+  }
+  # For a hierarchical UPF flow, add the results directory to the search path for
+  # Formality to find the output UPF files.
+  lappend search_path ${OUTPUTS_DIR}
+}
+. /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/dw/syn_ver /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/dw/sim_ver ../../spimemio/outputs/ ../../simpleuart/outputs/ ../dc_outputs/
+# Change alib_library_analysis_path to point to a central cache of analyzed libraries
+# to save runtime and disk space.  The following setting only reflects the
+# default value and should be changed to a central location for best results.
+set_app_var alib_library_analysis_path .
+.
+if {![file exists $OUTPUTS_DIR]} {file mkdir $OUTPUTS_DIR} ;# do not change this line or directory may not be created properly
+if {$UPF_MODE == "golden"} {
+  # Enable the Golden UPF mode to use same originla UPF script file throughout the synthesis,
+  # physical implementation, and verification flow.
+  set_app_var enable_golden_upf true
+}
+true
+###################################################################################
+# Library Setup
+#################################################################################
+set_app_var target_library ${TARGET_LIBRARY_FILES}
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+set_app_var synthetic_library dw_foundation.sldb
+dw_foundation.sldb
+set_app_var link_library "* $target_library $synthetic_library"
+* /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db dw_foundation.sldb
+if {[shell_is_in_topographical_mode]} {
+  if {[info exists view_target] && [file exists $DCRM_NDM_LIBRARY_NAME]} {
+    puts "RM-info: opening existing lib $DCRM_NDM_LIBRARY_NAME"
+    open_lib $DCRM_NDM_LIBRARY_NAME
+  } else {
+    if {[file exists $DCRM_NDM_LIBRARY_NAME]} {
+      puts "RM-info: deleting existing lib $DCRM_NDM_LIBRARY_NAME"
+      file delete -force $DCRM_NDM_LIBRARY_NAME
+    }
+   
+    set create_lib_cmd "create_lib -technology $TECH_FILE $DCRM_NDM_LIBRARY_NAME"
+    if {${REFERENCE_LIBRARY} != ""} { append create_lib_cmd " -ref_libs \"${REFERENCE_LIBRARY}\""}
+    puts "RM-info: Running $create_lib_cmd"
+    eval ${create_lib_cmd}
+  }
+}
+set set_check_library_cmd "set_check_library_options -mcmm"
+set_check_library_options -mcmm
+if {$UPF_MODE != "none"} {lappend set_check_library_cmd -upf}
+set_check_library_options -mcmm -upf
+puts "RM-info: Running $set_check_library_cmd"
+RM-info: Running set_check_library_options -mcmm -upf
+eval ${set_check_library_cmd}
+1
+redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.check_library.rpt {check_library}

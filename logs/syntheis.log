@@ -1,0 +1,352 @@
+
+                            Design Compiler (R) NXT 
+
+               Version T-2022.03-SP4 for linux64 - Aug 24, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Initializing gui preferences from file  /home1/BPPD08/NavEeN/.synopsys_dc_gui/preferences.tcl
+Warning: Cannot use command line editor for terminal type 'xterm-256color'.  (UI-74)
+4.1.1
+set_host_options -max_cores 16
+Warning: You requested 16 cores. However, load on host mavenserver-RH2 is 51.80. Tool will ignore the request and use 1 cores. (UIO-231)
+1
+dcnxt_shell> set DESIGN_NAME "raven_soc"    ;#  The name of the design
+raven_soc
+set OUTPUTS_DIR "../dc_outputs/"
+../dc_outputs/
+set SCRIPTS "../files/"
+../files/
+set DESIGN_STYLE "hier" ; #hier or flat
+hier
+set PHYSICAL_HIERARCHY_LEVEL "top" ; #bottom or top
+top
+set DC_BLOCK_ABSTRACTION_DESIGNS ""
+set DDC_HIER_DESIGNS "spimemio simpleuart"
+spimemio simpleuart
+set UPF_MODE golden
+golden
+set UPF_FILE "${SCRIPTS}/${DESIGN_NAME}.upf"
+../files//raven_soc.upf
+set DCRM_NDM_LIBRARY_NAME "${DESIGN_NAME}.ndm"
+raven_soc.ndm
+set TECH_FILE "/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf"/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf
+dcnxt_shell> set DESIGN_NAME "raven_soc"    ;#  The name of the design
+raven_soc
+set OUTPUTS_DIR "../dc_outputs/"
+../dc_outputs/
+set SCRIPTS "../files/"
+../files/
+set DESIGN_STYLE "hier" ; #hier or flat
+hier
+set PHYSICAL_HIERARCHY_LEVEL "top" ; #bottom or top
+top
+set DC_BLOCK_ABSTRACTION_DESIGNS ""
+set DDC_HIER_DESIGNS "spimemio simpleuart"
+spimemio simpleuart
+set UPF_MODE golden
+golden
+set UPF_FILE "${SCRIPTS}/${DESIGN_NAME}.upf"
+../files//raven_soc.upf
+set DCRM_NDM_LIBRARY_NAME "${DESIGN_NAME}.ndm"
+raven_soc.ndm
+set TECH_FILE "/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf"/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf
+dcnxt_shell> #################################################################################
+# Write Out Final Design and Reports
+#
+#        .ddc:   Recommended binary format used for subsequent Design Compiler sessions
+#        .v  :   Verilog netlist for ASCII flow (Formality, PrimeTime, VCS)
+#       .spef:   Topographical mode parasitics for PrimeTime
+#        .sdf:   SDF backannotated topographical mode timing for PrimeTime
+#        .sdc:   SDC constraints for ASCII flow
+#        .upf:   UPF multivoltage information for mapped design
+#
+#################################################################################
+if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "bottom"} {
+  # If this will be a sub-block in a hierarchical design, uniquify with block unique names
+  # to avoid name collisions when integrating the design at the top level
+  set_app_var uniquify_naming_style "${DESIGN_NAME}_%s_%d"
+  uniquify -force
+}
+change_names -rules verilog -hierarchy
+Error: Current design is not defined. (UID-4)
+0
+if {$DESIGN_STYLE == "flat"} {
+  set write_icc2_files_cmd "write_icc2_files -force -output ${OUTPUTS_DIR}/${DCRM_FINAL_DESIGN_ICC2}"
+  
+  if {$UPF_MODE == "golden" || $CREATES_PG_NETLIST == "true"} {
+    lappend write_icc2_files_cmd -pg
+  }
+  if {$UPF_MODE == "golden"} {
+    lappend write_icc2_files_cmd -golden_upf ${UPF_FILE}
+  }
+  puts "RM-info: Running $write_icc2_files_cmd"
+  eval ${write_icc2_files_cmd}
+}
+#Reports
+write_parasitics -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.spef
+Error: Current design is not defined. (UID-4)
+0
+# Write out link library information for PrimeTime when using instance-based target library settings
+write_link_library -out ${OUTPUTS_DIR}/${DESIGN_NAME}.link_library.tcl
+Error: Current design is not defined. (UID-4)
+0
+report_timing -group reg2reg > ${OUTPUTS_DIR}/${DESIGN_NAME}.reg2reg.rpt
+report_timing -group in2reg > ${OUTPUTS_DIR}/${DESIGN_NAME}.in2reg.rpt
+report_timing -group in2out > ${OUTPUTS_DIR}/${DESIGN_NAME}.in2out.rpt
+report_timing -group reg2out > ${OUTPUTS_DIR}/${DESIGN_NAME}.reg2out.rpt
+report_area > ${OUTPUTS_DIR}/area.rpt
+report_qor > ${OUTPUTS_DIR}/qor.rpt
+change_names -rules verilog
+Error: Current design is not defined. (UID-4)
+0
+#write -hierarchy -format verilog -output ${OUTPUTS_DIR}/${DESIGN_NAME}.v
+#write_file -hierarchy -format ddc -output ${OUTPUTS_DIR}/${DESIGN_NAME}.ddc
+#################################################################################
+# Generate MV Reports
+#################################################################################
+# For MCMM, some MV reports could have different voltages for different scenarios
+if {[shell_is_in_topographical_mode]} {
+  # For MCMM, some MV reports could have different voltages for different scenarios
+  set current_scenario_saved [current_scenario]
+  foreach scenario [all_active_scenarios] {
+    current_scenario ${scenario}
+  
+    # Report all power domains in the design
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.power_domain.rpt ] \
+      {report_power_domain -hierarchy}
+  
+    # Report the top level supply nets
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.supply_net.rpt ] \
+      {report_supply_net}
+  
+    # Report the level shifters in the design
+    if {[sizeof_collection [get_power_domains * -hierarchical -quiet]] > 0} {
+      redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.level_shifter.rpt ] \
+        {report_level_shifter -domain [get_power_domains * -hierarchical]}
+    } else {
+      redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.level_shifter.rpt] \
+        {report_level_shifter}
+    }
+  }
+  current_scenario ${current_scenario_saved}
+} else {
+  # Report all power domains in the design
+  redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.power_domain.rpt \
+    {report_power_domain -hierarchy}
+  
+  # Report the top level supply nets
+  redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.supply_net.rpt \
+    {report_supply_net}
+  
+  # Report the level shifters in the design
+  if {[sizeof_collection [get_power_domains * -hierarchical -quiet]] > 0} {
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.level_shifter.rpt \
+      {report_level_shifter -domain [get_power_domains * -hierarchical]}
+  } else {
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.level_shifter.rpt \
+      {report_level_shifter}
+  }
+}
+#################################################################################
+# Write out Design
+#################################################################################
+if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "top" && 1} {
+
+  #################################################################################
+  # Write out Top-Level Design Without Hierarchical Blocks
+  #
+  # Note: The write command will automatically skip writing .ddc physical hierarchical
+  #       blocks in Design Compiler topographical mode and Design Compiler block
+  #       abstractions blocks. DC NXT WLM mode still need to be removed before writing out
+  #       the top-level design. In the same way for the multivoltage flow, save_upf will
+  #       skip hierarchical blocks when saving the power intent data.
+  #
+  # When reading the design into other tools, read in all of the mapped hierarchical
+  # blocks and the mapped top-level design.
+  #
+  # For IC Compiler II: Replace the Design Compiler block abstractions with the complete
+  #                     block mapped netlist.
+  # For Formality: Verify each block and top separately.
+  #
+  #################################################################################
+  puts "RM-info: Writing out top level design without hierarchical blocks"
+   write_file -format verilog  -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.beforeremove.v 
+   write_file -format ddc  -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.beforeremove.ddc 
+  # Remove the hierarchical designs before writing out the top-level mapped verilog design, in WLM mode.
+  if {![shell_is_in_topographical_mode]} {
+    if {[get_designs -quiet ${DDC_HIER_DESIGNS}] != "" } {
+      remove_design -hierarchy [get_designs -quiet ${DDC_HIER_DESIGNS}]
+    }
+  }
+  
+  write_file -format verilog  -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.v
+  
+  # Remove the hierarchical designs before writing out the top-level mapped ddc design, in WLM mode.
+  if {![shell_is_in_topographical_mode]} {
+    if {[get_designs -quiet ${DDC_HIER_DESIGNS}] != "" } {
+      remove_design -hierarchy [get_designs -quiet ${DDC_HIER_DESIGNS}]
+    }
+  }
+  
+  # Write out ddc mapped top-level design
+  write_file -format ddc -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.ddc
+
+} else {
+
+  if {$DESIGN_STYLE == "flat"} {
+    puts "RM-info: Writing out flat design"
+  } else {
+    puts "RM-info: Writing out bottom-level design"
+    create_block_abstraction
+  }
+
+  if {$UPF_MODE == "golden"} {
+    write_file -format verilog -hierarchy -pg -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.pg.v
+  }
+  write_file -format verilog -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.v
+  write_file -format ddc     -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.ddc
+
+}
+RM-info: Writing out top level design without hierarchical blocks
+Error: No files or designs were specified. (UID-22)
+Error: No files or designs were specified. (UID-22)
+Error: No files or designs were specified. (UID-22)
+Error: No files or designs were specified. (UID-22)
+0
+if {$UPF_MODE != "none"} {
+  set save_upf_cmd "save_upf"
+  if {$UPF_MODE == "golden"} {
+    lappend save_upf_cmd -include_supply_exceptions
+    lappend save_upf_cmd -supplemental ${OUTPUTS_DIR}/${DESIGN_NAME}.supplement.upf
+  } elseif {$UPF_MODE == "prime"} {
+    lappend save_upf_cmd ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.upf
+  }
+  puts "RM-info: Running $save_upf_cmd"
+  eval ${save_upf_cmd}
+}
+RM-info: Running save_upf -include_supply_exceptions -supplemental ../dc_outputs//raven_soc.supplement.upf
+Error: In non Golden UPF mode, option -supplemental is not supported in command save_upf. (UPF-639)
+0
+# Write and close SVF file and make it available for immediate use
+set_svf -off
+1
+# Save NDM to disk
+if {[shell_is_in_topographical_mode]} {
+  save_lib
+}
+puts "SYNTHESIS COMPLETED :)"SYNTHESIS COMPLETED :)
+dcnxt_shell> write_file -format verilog  -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.v
+Error: No files or designs were specified. (UID-22)
+0
+dcnxt_shell> write_file -format verilog  -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.v
+Error: No files or designs were specified. (UID-22)
+0
+dcnxt_shell> if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "bottom"} {
+  # If this will be a sub-block in a hierarchical design, uniquify with block unique names
+  # to avoid name collisions when integrating the design at the top level
+  set_app_var uniquify_naming_style "${DESIGN_NAME}_%s_%d"
+  uniquify -force
+}dcnxt_shell> change_names -rules verilog -hierarchy
+Error: Current design is not defined. (UID-4)
+0
+dcnxt_shell> if {$DESIGN_STYLE == "flat"} {
+  set write_icc2_files_cmd "write_icc2_files -force -output ${OUTPUTS_DIR}/${DCRM_FINAL_DESIGN_ICC2}"
+  
+  if {$UPF_MODE == "golden" || $CREATES_PG_NETLIST == "true"} {
+    lappend write_icc2_files_cmd -pg
+  }
+  if {$UPF_MODE == "golden"} {
+    lappend write_icc2_files_cmd -golden_upf ${UPF_FILE}
+  }
+  puts "RM-info: Running $write_icc2_files_cmd"
+  eval ${write_icc2_files_cmd}
+}
+dcnxt_shell> #Reports
+write_parasitics -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.spef
+Error: Current design is not defined. (UID-4)
+0
+# Write out link library information for PrimeTime when using instance-based target library settings
+write_link_library -out ${OUTPUTS_DIR}/${DESIGN_NAME}.link_library.tcl
+Error: Current design is not defined. (UID-4)
+0
+report_timing -group reg2reg > ${OUTPUTS_DIR}/${DESIGN_NAME}.reg2reg.rpt
+report_timing -group in2reg > ${OUTPUTS_DIR}/${DESIGN_NAME}.in2reg.rpt
+report_timing -group in2out > ${OUTPUTS_DIR}/${DESIGN_NAME}.in2out.rpt
+report_timing -group reg2out > ${OUTPUTS_DIR}/${DESIGN_NAME}.reg2out.rpt
+report_area > ${OUTPUTS_DIR}/area.rpt
+report_qor > ${OUTPUTS_DIR}/qor.rpt
+change_names -rules verilog
+Error: Current design is not defined. (UID-4)
+0
+#write -hierarchy -format verilog -output ${OUTPUTS_DIR}/${DESIGN_NAME}.v
+#write_file -hierarchy -format ddc -output ${OUTPUTS_DIR}/${DESIGN_NAME}.ddc
+#################################################################################
+# Generate MV Reports
+#################################################################################dcnxt_shell> # For MCMM, some MV reports could have different voltages for different scenarios
+if {[shell_is_in_topographical_mode]} {
+  # For MCMM, some MV reports could have different voltages for different scenarios
+  set current_scenario_saved [current_scenario]
+  foreach scenario [all_active_scenarios] {
+    current_scenario ${scenario}
+  
+    # Report all power domains in the design
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.power_domain.rpt ] \
+      {report_power_domain -hierarchy}
+  
+    # Report the top level supply nets
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.supply_net.rpt ] \
+      {report_supply_net}
+  
+    # Report the level shifters in the design
+    if {[sizeof_collection [get_power_domains * -hierarchical -quiet]] > 0} {
+      redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.level_shifter.rpt ] \
+        {report_level_shifter -domain [get_power_domains * -hierarchical]}
+    } else {
+      redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.${scenario}.level_shifter.rpt] \
+        {report_level_shifter}
+    }
+  }
+  current_scenario ${current_scenario_saved}
+} else {
+  # Report all power domains in the design
+  redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.power_domain.rpt \
+    {report_power_domain -hierarchy}
+  
+  # Report the top level supply nets
+  redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.supply_net.rpt \
+    {report_supply_net}
+  
+  # Report the level shifters in the design
+  if {[sizeof_collection [get_power_domains * -hierarchical -quiet]] > 0} {
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.level_shifter.rpt \
+      {report_level_shifter -domain [get_power_domains * -hierarchical]}
+  } else {
+    redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.level_shifter.rpt \
+      {report_level_shifter}
+  }
+}dcnxt_shell> write_file -format verilog -hierarchy -output ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.v
+Error: No files or designs were specified. (UID-22)
+0
+dcnxt_shell> exit
+
+Memory usage for this session 107 Mbytes.
+Memory usage for this session including child processes 107 Mbytes.
+CPU usage for this session 22 seconds ( 0.01 hours ).
+Elapsed time for this session 6167 seconds ( 1.71 hours ).
+
+Thank you...

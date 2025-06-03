@@ -1,0 +1,1793 @@
+
+                            Design Compiler (R) NXT 
+
+               Version T-2022.03-SP4 for linux64 - Aug 24, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Initializing gui preferences from file  /home1/BPPD08/NavEeN/.synopsys_dc_gui/preferences.tcl
+Warning: Cannot use command line editor for terminal type 'xterm-256color'.  (UI-74)
+4.1.1
+set_host_options -max_cores 16
+Warning: You requested 16 cores. However, load on host mavenserver-RH2 is 48.41. Tool will ignore the request and use 1 cores. (UIO-231)
+1
+dcnxt_shell> set DESIGN_NAME "raven_soc"    ;#  The name of the design
+raven_soc
+set OUTPUTS_DIR "../dc_outputs/"
+../dc_outputs/
+set SCRIPTS "../files/"
+../files/
+set DESIGN_STYLE "hier" ; #hier or flat
+hier
+set PHYSICAL_HIERARCHY_LEVEL "top" ; #bottom or top
+top
+set DC_BLOCK_ABSTRACTION_DESIGNS ""
+set DDC_HIER_DESIGNS "spimemio simpleuart"
+spimemio simpleuart
+set UPF_MODE golden
+golden
+set UPF_FILE "${SCRIPTS}/${DESIGN_NAME}.upf"
+../files//raven_soc.upf
+set DCRM_NDM_LIBRARY_NAME "${DESIGN_NAME}.ndm"
+raven_soc.ndm
+set TECH_FILE "/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf"
+/home1/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf
+#set_tlu_plus_files -max_tluplus /home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus -min_tluplus  /home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus  -tech2itf_map ../../../../../14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map
+dcnxt_shell> set  REFERENCE_LIBRARY "/home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/ /home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm"
+/home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/ /home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm
+dcnxt_shell> set  REFERENCE_LIBRARY "/home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/ /home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm"
+/home1/BPPD08/NavEeN/internship/spimemio/macro/spimemio.ndm/ /home1/BPPD08/NavEeN/internship/simpleuart/macro/simpleuart.ndm/ /home1/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm  /home1/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm /home1/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm
+dcnxt_shell> set link_library "/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \ 
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db \
+		/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db \
+	         			/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+	        			 /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db" 	       
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+################ target library###################################################
+set TARGET_LIBRARY_FILES "/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \
+                   /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db \
+		/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db \
+	         			/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db \
+	         			/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db \
+				/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+	        			 /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db"
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+dcnxt_shell> if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "top"} {
+  # For a hierarchical flow, add the block-level results directories to the
+  # search path to find the block-level design files.
+  set HIER_DESIGNS "${DDC_HIER_DESIGNS} ${DC_BLOCK_ABSTRACTION_DESIGNS}"
+  foreach design $HIER_DESIGNS {
+    lappend search_path ../../${design}/outputs/
+  }
+  # For a hierarchical UPF flow, add the results directory to the search path for
+  # Formality to find the output UPF files.
+  lappend search_path ${OUTPUTS_DIR}
+}
+. /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/dw/syn_ver /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/dw/sim_ver ../../spimemio/outputs/ ../../simpleuart/outputs/ ../dc_outputs/
+# Change alib_library_analysis_path to point to a central cache of analyzed libraries
+# to save runtime and disk space.  The following setting only reflects the
+# default value and should be changed to a central location for best results.
+set_app_var alib_library_analysis_path .
+.
+if {![file exists $OUTPUTS_DIR]} {file mkdir $OUTPUTS_DIR} ;# do not change this line or directory may not be created properly
+if {$UPF_MODE == "golden"} {
+  # Enable the Golden UPF mode to use same originla UPF script file throughout the synthesis,
+  # physical implementation, and verification flow.
+  set_app_var enable_golden_upf true
+}
+true
+dcnxt_shell> set_app_var target_library ${TARGET_LIBRARY_FILES}
+/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+set_app_var synthetic_library dw_foundation.sldb
+dw_foundation.sldb
+set_app_var link_library "* $target_library $synthetic_library"
+* /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+		/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db  /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db dw_foundation.sldb
+if {[shell_is_in_topographical_mode]} {
+  if {[info exists view_target] && [file exists $DCRM_NDM_LIBRARY_NAME]} {
+    puts "RM-info: opening existing lib $DCRM_NDM_LIBRARY_NAME"
+    open_lib $DCRM_NDM_LIBRARY_NAME
+  } else {
+    if {[file exists $DCRM_NDM_LIBRARY_NAME]} {
+      puts "RM-info: deleting existing lib $DCRM_NDM_LIBRARY_NAME"
+      file delete -force $DCRM_NDM_LIBRARY_NAME
+    }
+   
+    set create_lib_cmd "create_lib -technology $TECH_FILE $DCRM_NDM_LIBRARY_NAME"
+    if {${REFERENCE_LIBRARY} != ""} { append create_lib_cmd " -ref_libs \"${REFERENCE_LIBRARY}\""}
+    puts "RM-info: Running $create_lib_cmd"
+    eval ${create_lib_cmd}
+  }
+}
+set set_check_library_cmd "set_check_library_options -mcmm"
+set_check_library_options -mcmm
+if {$UPF_MODE != "none"} {lappend set_check_library_cmd -upf}
+set_check_library_options -mcmm -upf
+puts "RM-info: Running $set_check_library_cmd"
+RM-info: Running set_check_library_options -mcmm -upf
+eval ${set_check_library_cmd}
+1
+redirect -file ${OUTPUTS_DIR}/${DESIGN_NAME}.check_library.rpt {check_library}
+dcnxt_shell> #################################################################################
+# Library Modifications
+# Apply library modifications after the libraries are loaded.
+#################################################################################
+#source ${SCRIPTS}/dont_use.tcl
+########################################################################################## 
+## Message handling
+##########################################################################################
+# The following setting removes new variable info messages from the end of the log file
+set_app_var sh_new_variable_message false
+false
+# Enable the insertion of level-shifters on clock nets for a multivoltage flow
+set_app_var auto_insert_level_shifters_on_clocks all
+all
+# Enable the support of via resistance for RC estimation to improve the timing correlation with IC Compiler
+set_app_var spg_enable_via_resistance_support true 
+true
+#################################################################################
+# Setup for Formality Verification
+#################################################################################
+# In the event of an inconclusive (or hard) verification, we recommend using
+# the set_verification_priority commands provided from the analyze_points command
+# in Formality. The set_verification_priority commands target specific
+# operators to reduce verification complexity while minimizing QoR impact.
+# The set_verification_priority commands should be applied after the design
+# is read and elaborated.
+# For designs that don't have tight QoR constraints and don't have register retiming,
+# you can use the following variable to enable the highest productivity single pass flow.
+# This flow modifies the optimizations to make verification easier.
+# This variable setting should be applied prior to reading in the RTL for the design.
+set_app_var simplified_verification_mode true
+true
+# Define the verification setup file for Formality
+set_svf ${OUTPUTS_DIR}/${DESIGN_NAME}.mapped.svf
+1
+#################################################################################
+# Read in the RTL Design
+# Read in the RTL source files or read in the elaborated design (.ddc).
+#################################################################################
+#Analyze
+analyze -format verilog [glob ../raven_rtl/*.v]Information: Optimization is being performed with the 'simplified_verification_mode' variable enabled.  (INFO-114)
+Running PRESTO HDLC
+Compiling source file ../raven_rtl/picorv32_pcpi_div.v
+Compiling source file ../raven_rtl/picorv32_pcpi_fast_mul.v
+Compiling source file ../raven_rtl/picorv32_pcpi_mul.v
+Compiling source file ../raven_rtl/picorv32_regs.v
+Compiling source file ../raven_rtl/picorv32.v
+Warning:  ../raven_rtl/picorv32.v:1995: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  ../raven_rtl/picorv32.v:1996: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Warning:  ../raven_rtl/picorv32.v:1999: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Compiling source file ../raven_rtl/raven_soc.v
+Warning:  ../raven_rtl/picorv32.v:211: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:211: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:198: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:231: A unnamed generate block with an LRM-defined name 'genblk2' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:231: A unnamed generate block with an LRM-defined name 'genblk2' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:1132: A unnamed generate block with an LRM-defined name 'genblk3' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:1132: A unnamed generate block with an LRM-defined name 'genblk3' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../raven_rtl/picorv32.v:136: The statements in initial blocks are ignored. (VER-281)
+Warning:  ../raven_rtl/raven_soc.v:171: Redeclaration of port 'gpio_pullup'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:172: Redeclaration of port 'gpio_pulldown'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:173: Redeclaration of port 'gpio_outenb'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:179: Redeclaration of port 'adc0_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:180: Redeclaration of port 'adc0_convert'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:182: Redeclaration of port 'adc0_inputsrc'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:183: Redeclaration of port 'adc1_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:184: Redeclaration of port 'adc1_convert'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:186: Redeclaration of port 'adc1_inputsrc'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:187: Redeclaration of port 'dac_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:188: Redeclaration of port 'dac_value'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:189: Redeclaration of port 'comp_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:190: Redeclaration of port 'comp_ninputsrc'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:191: Redeclaration of port 'comp_pinputsrc'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:192: Redeclaration of port 'rcosc_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:193: Redeclaration of port 'overtemp_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:202: Redeclaration of port 'analog_out_sel'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:203: Redeclaration of port 'opamp_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:204: Redeclaration of port 'opamp_bias_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:205: Redeclaration of port 'bg_ena'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:206: Redeclaration of port 'adc0_clk'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:207: Redeclaration of port 'adc1_clk'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:209: Redeclaration of port 'ram_wenb'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:210: Redeclaration of port 'ram_addr'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:211: Redeclaration of port 'ram_wdata'. (VER-331)
+Warning:  ../raven_rtl/raven_soc.v:224: Redeclaration of port 'ram_rdata'. (VER-331)
+Compiling source file ../raven_rtl/raven_spi.v
+Compiling source file ../raven_rtl/spi_slave.v
+Presto compilation completed successfully.
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db'
+Information: Using CCS timing libraries. (TIM-024)
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db'
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db'
+Loading db file '/home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn/dw_foundation.sldb'
+1
+dcnxt_shell> set ddc_file "/home1/BPPD08/NavEeN/internship/simpleuart/dc_results/netlist.ddc /home1/BPPD08/NavEeN/internship/spimemio/dc_outputs/spimemio.mapped.ddc"
+/home1/BPPD08/NavEeN/internship/simpleuart/dc_results/netlist.ddc /home1/BPPD08/NavEeN/internship/spimemio/dc_outputs/spimemio.mapped.ddc
+dcnxt_shell> if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "top"} {
+  # The set_top_implementation_options command defines which blocks should be
+  # read as block abstractions.
+  # Note: You can use the -block_update_setup_script option to pass any variable 
+  #       setting for the block update process. 
+  if { (${DC_BLOCK_ABSTRACTION_DESIGNS} != "")} {
+    set HIER_DESIGNS [concat ${DC_BLOCK_ABSTRACTION_DESIGNS}]
+    set set_top_implementation_options_cmd "set_top_implementation_options -block_references \"$HIER_DESIGNS\""
+    puts "RM-info: Running $set_top_implementation_options_cmd"
+    eval ${set_top_implementation_options_cmd}
+  }
+  # Remove the RTL version of the hierarchical blocks in case they were read in
+  set HIER_DESIGNS "${DDC_HIER_DESIGNS} ${DC_BLOCK_ABSTRACTION_DESIGNS}" 
+  foreach design $HIER_DESIGNS {
+    if {[filter [get_designs -quiet *] "@hdl_template == $design"] != "" } {
+      remove_design -hierarchy [filter [get_designs -quiet *] "@hdl_template == $design"]
+    }
+  }
+  #################################################################################
+  # Load Hierarchical Designs
+  #################################################################################
+
+  # Read in compiled hierarchical blocks
+  # For topographical mode top-level synthesis all physical blocks are required to
+  # be compiled in topographical mode.
+
+foreach design ${DDC_HIER_DESIGNS} {
+    set ddc_file ${design}.mapped.ddc
+    puts "RM-info: Reading design $design as hierarchical DDC [which $ddc_file]"
+    read_ddc $ddc_file
+}
+  
+  foreach design ${DC_BLOCK_ABSTRACTION_DESIGNS} {
+    set ddc_file ${design}.mapped.ddc
+    puts "RM-info: Reading design $design as block abstract [which $ddc_file]"
+    read_ddc $ddc_file
+  }
+}Warning: File 'spimemio.mapped.ddc' was not found in search path. (CMD-030)
+RM-info: Reading design spimemio as hierarchical DDC 
+Loading db file '/home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn/gtech.db'
+Loading db file '/home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'saed14rvt_ss0p6v125c'
+  Loading link library 'saed14lvt_ss0p6vm40c'
+  Loading link library 'saed14rvt_ss0p6vm40c'
+  Loading link library 'saed14lvt_ss0p72v125c'
+  Loading link library 'saed14rvt_ulvl_ss0p6vm40c_i0p6v'
+  Loading link library 'saed14lvt_ulvl_ss0p6vm40c_i0p6v'
+  Loading link library 'saed14lvt_ulvl_ss0p72v125c_i0p6v'
+  Loading link library 'saed14rvt_ulvl_ss0p72v125c_i0p6v'
+  Loading link library 'saed14rvt_dlvl_ss0p6vm40c_i0p6v'
+  Loading link library 'saed14lvt_dlvl_ss0p72vm40c_i0p6v'
+  Loading link library 'saed14lvt_dlvl_ss0p6v125c_i0p6v'
+  Loading link library 'saed14rvt_dlvl_ss0p72v125c_i0p6v'
+  Loading link library 'saed14lvt_ss0p72vm40c'
+  Loading link library 'gtech'
+Error: Cannot read file 'spimemio.mapped.ddc'. (UID-58)
+Warning: File 'simpleuart.mapped.ddc' was not found in search path. (CMD-030)
+RM-info: Reading design simpleuart as hierarchical DDC 
+Error: Cannot read file 'simpleuart.mapped.ddc'. (UID-58)
+dcnxt_shell> read_ddc "/home1/BPPD08/NavEeN/internship/simpleuart/dc_results/netlist.ddc /home1/BPPD08/NavEeN/internship/spimemio/dc_outputs/spimemio.mapped.ddc"
+Reading ddc file '/home1/BPPD08/NavEeN/internship/simpleuart/dc_results/netlist.ddc'.
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Reading ddc file '/home1/BPPD08/NavEeN/internship/spimemio/dc_outputs/spimemio.mapped.ddc'.
+Loaded 26 designs.
+Loading db file '/home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ff0p88v125c.db'
+Current design is 'simpleuart'.
+simpleuart SNPS_CLOCK_GATE_HIGH_simpleuart_0 SNPS_CLOCK_GATE_HIGH_simpleuart_1 SNPS_CLOCK_GATE_HIGH_simpleuart_2 SNPS_CLOCK_GATE_HIGH_simpleuart_3 SNPS_CLOCK_GATE_HIGH_simpleuart_4 SNPS_CLOCK_GATE_HIGH_simpleuart_5 SNPS_CLOCK_GATE_HIGH_simpleuart_6 SNPS_CLOCK_GATE_HIGH_simpleuart_7 spimemio spimemio_xfer SNPS_CLOCK_GATE_HIGH_spimemio_0 SNPS_CLOCK_GATE_HIGH_spimemio_7 SNPS_CLOCK_GATE_HIGH_spimemio_6 SNPS_CLOCK_GATE_HIGH_spimemio_5 SNPS_CLOCK_GATE_HIGH_spimemio_4 SNPS_CLOCK_GATE_HIGH_spimemio_3 SNPS_CLOCK_GATE_HIGH_spimemio_2 SNPS_CLOCK_GATE_HIGH_spimemio_1 SNPS_CLOCK_GATE_HIGH_spimemio_0_1 SNPS_CLOCK_GATE_HIGH_spimemio_xfer_0 SNPS_CLOCK_GATE_HIGH_spimemio_xfer_4 SNPS_CLOCK_GATE_HIGH_spimemio_xfer_3 SNPS_CLOCK_GATE_HIGH_spimemio_xfer_2 SNPS_CLOCK_GATE_HIGH_spimemio_xfer_1 spimemio_DW01_add_0
+Current design is 'simpleuart'.
+dcnxt_shell> elaborate ${DESIGN_NAME}
+Information: Optimization is being performed with the 'simplified_verification_mode' variable enabled.  (INFO-114)
+Running PRESTO HDLC
+Warning:  ../raven_rtl/raven_soc.v:327: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/raven_soc.v:395: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/raven_soc.v:445: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine raven_soc line 444 in file
+		'../raven_rtl/raven_soc.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ram_ready_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine raven_soc line 541 in file
+		'../raven_rtl/raven_soc.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| rcosc_output_dest_reg | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  irq_8_inputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  analog_out_sel_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| xtal_output_dest_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  pll_output_dest_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     opamp_ena_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  irq_7_inputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|   overtemp_dest_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|   overtemp_ena_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  opamp_bias_ena_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| trap_output_dest_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      bg_ena_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    iomem_ready_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    iomem_rdata_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpio_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     gpio_oeb_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      gpio_pu_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      gpio_pd_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     adc0_ena_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   adc0_convert_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    adc0_clksrc_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|   adc0_inputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     adc1_ena_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   adc1_convert_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    adc1_clksrc_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|   adc1_inputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      dac_ena_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     dac_value_reg     | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|     comp_ena_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  comp_ninputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  comp_pinputsrc_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     rcosc_ena_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| comp_output_dest_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully. (raven_soc)
+Elaborated 1 design.
+Current design is now 'raven_soc'.
+Information: Building the design 'picorv32' instantiated from design 'raven_soc' with
+	the parameters "STACKADDR=32'h00001000,PROGADDR_RESET=32'h00100000,PROGADDR_IRQ=32'h00000000,BARREL_SHIFTER=1,COMPRESSED_ISA=1,ENABLE_MUL=1,ENABLE_DIV=1,ENABLE_IRQ=1,ENABLE_IRQ_QREGS=0". (HDL-193)
+Warning:  ../raven_rtl/picorv32.v:524: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:796: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1116: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1220: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1325: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1376: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1403: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1449: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1455: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1463: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:1946: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32.v:792: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1331: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1420: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1468: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1648: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1698: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1710: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1841: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1861: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:260: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 251 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           258            |      no/no       |
+===============================================
+
+Statistics for case statements in always block at line 327 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           329            |     no/auto      |
+|           338            |    auto/auto     |
+|           346            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 356 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           363            |     no/auto      |
+|           365            |     no/auto      |
+|           381            |     no/auto      |
+|           435            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 472 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           488            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 764 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           808            |     no/auto      |
+|           810            |     no/auto      |
+|           829            |    auto/auto     |
+|           892            |    auto/auto     |
+|           1025           |     auto/no      |
+===============================================
+
+Statistics for case statements in always block at line 1152 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1155           |      no/no       |
+|           1172           |      no/no       |
+===============================================
+
+Statistics for case statements in always block at line 1212 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1218           |      no/no       |
+===============================================
+Warning:  ../raven_rtl/picorv32.v:1447: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1555: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1563: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1609: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1645: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ../raven_rtl/picorv32.v:1695: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 1299 in file
+	'../raven_rtl/picorv32.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1389           |     no/auto      |
+|           1401           |      no/no       |
+|           1487           |     auto/no      |
+|           1531           |      no/no       |
+|           1639           |    auto/auto     |
+|           1670           |     auto/no      |
+|           1740           |      no/no       |
+|           1748           |      no/no       |
+|           1763           |      no/no       |
+|           1788           |      no/no       |
+|           1805           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 316 in file
+		'../raven_rtl/picorv32.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|    last_mem_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| mem_la_firstword_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 327 in file
+		'../raven_rtl/picorv32.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  mem_la_wdata_reg   | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+| mem_rdata_word_reg  | Latch |  32   |  Y  | N  | N  | N  | -  | -  | -  |
+|  mem_la_wstrb_reg   | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 356 in file
+		'../raven_rtl/picorv32.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| next_insn_opcode_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   mem_rdata_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 472 in file
+		'../raven_rtl/picorv32.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|      mem_wdata_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_addr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      mem_wstrb_reg       | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  mem_la_secondword_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| prefetched_high_word_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      mem_valid_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      mem_instr_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      mem_state_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|   mem_16bit_buffer_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 683 in file
+		'../raven_rtl/picorv32.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|  cached_insn_rs1_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   dbg_insn_addr_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  cached_insn_rs2_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|   q_insn_opcode_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     q_insn_rs1_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     q_insn_rs2_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|      dbg_next_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   dbg_valid_insn_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| cached_insn_opcode_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 764 in file
+		'../raven_rtl/picorv32.v'.
+=====================================================================================================
+|               Register Name               |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================================
+|               pcpi_insn_reg               | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|               instr_beq_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_bne_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_xor_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_srl_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sra_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_or_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_blt_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_srai_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sll_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_slt_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_sltu_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_xori_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sub_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sh_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_slli_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_addi_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_add_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_srli_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sw_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_sltiu_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_slti_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_andi_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_ori_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_lb_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_lbu_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_bge_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_bltu_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_bgeu_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_lh_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_lhu_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_sb_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_lw_reg                | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              decoded_imm_reg              | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|              instr_timer_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|           is_slli_srli_srai_reg           | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|             instr_maskirq_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            is_alu_reg_reg_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_setq_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            is_alu_reg_imm_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_getq_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| is_jalr_addi_slti_sltiu_xori_ori_andi_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            instr_rdinstrh_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              is_sb_sh_sw_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          instr_ecall_ebreak_reg           | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          is_lb_lh_lw_lbu_lhu_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|             instr_rdinstr_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_jalr_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            instr_rdcycleh_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_jal_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|             instr_rdcycle_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     is_beq_bne_blt_bge_bltu_bgeu_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            decoded_imm_uj_reg             | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|           is_lui_auipc_jal_reg            | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  is_lui_auipc_jal_jalr_addi_add_sub_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|            is_slti_blt_slt_reg            | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          is_sltiu_bltu_sltu_reg           | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              is_compare_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              decoded_rd_reg               | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|           compressed_instr_reg            | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|             instr_retirq_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|             instr_waitirq_reg             | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              decoded_rs1_reg              | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|              decoded_rs2_reg              | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|               instr_lui_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|               instr_and_reg               | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              instr_auipc_reg              | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=====================================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 1196 in file
+		'../raven_rtl/picorv32.v'.
+============================================================================================
+|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================
+| clear_prefetched_high_word_q_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+============================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 1240 in file
+		'../raven_rtl/picorv32.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cpuregs_reg     | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 1299 in file
+		'../raven_rtl/picorv32.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+|        pcpi_valid_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     mem_do_prefetch_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         reg_out_reg          | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        irq_delay_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    decoder_trigger_q_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         reg_op1_reg          | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|           trap_reg           | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      latched_branch_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       mem_wordsize_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       irq_pending_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      latched_compr_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        irq_state_reg         | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_do_wdata_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  decoder_pseudo_trigger_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|           eoi_reg            | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       count_cycle_reg        | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|         irq_mask_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        dbg_rs2val_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     dbg_rs1val_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        dbg_rs1val_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     dbg_rs2val_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        alu_out_q_reg         | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        do_waitirq_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| decoder_pseudo_trigger_q_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        irq_active_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      latched_stalu_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        latched_rd_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|       reg_next_pc_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        cpu_state_reg         | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_do_rinst_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          reg_sh_reg          | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|      latched_store_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       trace_valid_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     decoder_trigger_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         reg_op2_reg          | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|        trace_data_reg        | Flip-flop |  36   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_do_rdata_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          reg_pc_reg          | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|          timer_reg           | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   pcpi_timeout_counter_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|       pcpi_timeout_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       count_instr_reg        | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine picorv32_1_1_1_1_1_0_00100000_00000000_00001000 line 1881 in file
+		'../raven_rtl/picorv32.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| rvfi_mem_wmask_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+| rvfi_mem_wdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    rvfi_halt_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  dbg_irq_enter_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| rvfi_mem_rmask_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rvfi_mem_addr_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rvfi_rd_wdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    rvfi_intr_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  rvfi_rd_addr_reg   | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+| rvfi_mem_rdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   dbg_irq_ret_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  dbg_irq_call_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   rvfi_valid_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   rvfi_order_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|    rvfi_insn_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rvfi_rs1_addr_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rvfi_rs2_addr_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|  rvfi_pc_rdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| rvfi_rs1_rdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| rvfi_rs2_rdata_reg  | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    rvfi_trap_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==========================================================================================
+|                   block name/line                    | Inputs | Outputs | # sel inputs |
+==========================================================================================
+| picorv32_1_1_1_1_1_0_00100000_00000000_00001000/1249 |   32   |   32    |      5       |
+| picorv32_1_1_1_1_1_0_00100000_00000000_00001000/1250 |   32   |   32    |      5       |
+==========================================================================================
+Presto compilation completed successfully. (picorv32_1_1_1_1_1_0_00100000_00000000_00001000)
+Information: Building the design 'picorv32_pcpi_mul'. (HDL-193)
+Warning:  ../raven_rtl/picorv32_pcpi_mul.v:90: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32_pcpi_mul.v:95: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../raven_rtl/picorv32_pcpi_mul.v:101: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 25 in file
+	'../raven_rtl/picorv32_pcpi_mul.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            40            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine picorv32_pcpi_mul line 25 in file
+		'../raven_rtl/picorv32_pcpi_mul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  instr_mulhsu_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   pcpi_wait_q_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    pcpi_wait_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   instr_mulh_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   instr_mulhu_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    instr_mul_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine picorv32_pcpi_mul line 83 in file
+		'../raven_rtl/picorv32_pcpi_mul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   mul_waiting_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   mul_finish_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   mul_counter_reg   | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|       rd_reg        | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine picorv32_pcpi_mul line 117 in file
+		'../raven_rtl/picorv32_pcpi_mul.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pcpi_rd_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   pcpi_ready_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     pcpi_wr_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (picorv32_pcpi_mul)
+Information: Building the design 'picorv32_pcpi_div'. (HDL-193)
+Warning:  ../raven_rtl/picorv32_pcpi_div.v:59: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 19 in file
+	'../raven_rtl/picorv32_pcpi_div.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            26            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine picorv32_pcpi_div line 19 in file
+		'../raven_rtl/picorv32_pcpi_div.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   instr_remu_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   pcpi_wait_q_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    pcpi_wait_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    instr_rem_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   instr_divu_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    instr_div_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine picorv32_pcpi_div line 45 in file
+		'../raven_rtl/picorv32_pcpi_div.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     outsign_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     pcpi_wr_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    quotient_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  quotient_msk_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     running_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    dividend_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     divisor_reg     | Flip-flop |  63   |  Y  | N  | N  | N  | N  | N  | N  |
+|   pcpi_ready_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     pcpi_rd_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (picorv32_pcpi_div)
+1
+Current design is 'raven_soc'.
+dcnxt_shell> read_parasitics "/home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus /home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus /home1/14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map"
+Information: Library unit = 1.000000 ns. (SPEF-10)
+Information: Derived delay scale factor = 0.001000. (SPEF-11)
+Information: Library unit = 0.001000 pF. (SPEF-10)
+Information: Derived capacitance scale factor = 999.999939. (SPEF-12)
+Information: Library unit = 999.999939 kOhm. (SPEF-10)
+Information: Derived resistance scale factor = 0.000001. (SPEF-13)
+
+Reading /home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus ...
+
+Error: Could not determine the format of parasitics file:
+	'/home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus' (SPFP-002)
+
+FAILED
+
+
+Reading /home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus ...
+
+Error: Could not determine the format of parasitics file:
+	'/home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus' (SPFP-002)
+
+FAILED
+
+
+Reading /home1/14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map ...
+
+Error: Could not determine the format of parasitics file:
+	'/home1/14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map' (SPFP-002)
+
+FAILED
+
+0
+dcnxt_shell> read_parasitics -path "/home1/14_nmts/14_nmts/tech/star_rc/max/saed14nm_1p9m_Cmax.tluplus /home1/14_nmts/14_nmts/tech/star_rc/min/saed14nm_1p9m_Cmin.tluplus /home1/14_nmts/14_nmts/tech/star_rc/saed14nm_tf_itf_tluplus.map"
+Information: Library unit = 1.000000 ns. (SPEF-10)
+Information: Derived delay scale factor = 0.001000. (SPEF-11)
+Information: Library unit = 0.001000 pF. (SPEF-10)
+Information: Derived capacitance scale factor = 999.999939. (SPEF-12)
+Information: Library unit = 999.999939 kOhm. (SPEF-10)
+Information: Derived resistance scale factor = 0.000001. (SPEF-13)
+
+0 net completion steps have been performed.
+0 nets have been skipped due to partial parasitics
+
+1
+dcnxt_shell> current_design ${DESIGN_NAME}
+Current design is 'raven_soc'.
+{raven_soc}
+dcnxt_shell> set_design_top raven_soc
+Error: Command 'set_design_top' is disabled from the command prompt in Golden UPF mode and will be ignored. (UPF-643)
+0
+dcnxt_shell> link
+  Linking design 'raven_soc'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (30 designs)              /home1/BPPD08/NavEeN/internship/top/dc_work/raven_soc.db, etc
+  saed14rvt_ss0p6v125c (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db
+  saed14lvt_ss0p6vm40c (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6vm40c.db
+  saed14rvt_ss0p6vm40c (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6vm40c.db
+  saed14lvt_ss0p72v125c (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db
+  saed14rvt_ulvl_ss0p6vm40c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p6vm40c_i0p6v.db
+  saed14lvt_ulvl_ss0p6vm40c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p6vm40c_i0p6v.db
+  saed14lvt_ulvl_ss0p72v125c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db
+  saed14rvt_ulvl_ss0p72v125c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db
+  saed14rvt_dlvl_ss0p6vm40c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p6vm40c_i0p6v.db
+  saed14lvt_dlvl_ss0p72vm40c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p72vm40c_i0p6v.db
+  saed14lvt_dlvl_ss0p6v125c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_dlvl_ss0p6v125c_i0p6v.db
+  saed14rvt_dlvl_ss0p72v125c_i0p6v (library) /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db
+  saed14lvt_ss0p72vm40c (library) /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72vm40c.db
+  dw_foundation.sldb (library) /home/cad/eda/SYNOPSYS/Design_compiler/syn/T-2022.03-SP4/libraries/syn/dw_foundation.sldb
+
+1
+dcnxt_shell> if {$DESIGN_STYLE == "hier" && $PHYSICAL_HIERARCHY_LEVEL == "top"} {
+  # Check to make sure that all the correct designs were linked
+  # Pay special attention to the source location of your physical blocks
+  list_designs -show_file
+  
+  # Don't optimize ${DDC_HIER_DESIGNS}
+  if { ${DDC_HIER_DESIGNS} != ""} {
+    if {[shell_is_in_topographical_mode]} {
+      # Hierarchical .ddc blocks must be marked as physical hierarchy
+      # In case of multiply instantiated designs, only set_physical_hierarchy on ONE instance
+      set_physical_hierarchy [sub_instances_of -hierarchy -master_instance -of_references ${DDC_HIER_DESIGNS} ${DESIGN_NAME}]
+      puts "RM-info: Marked as physical hierarchy: [get_physical_hierarchy]"
+    } else {
+      # Don't touch these blocks in DC-WLM
+      # TODO
+      set_dont_touch [get_designs ${DDC_HIER_DESIGNS}]
+    }
+#TODO
+    #create_link_block_abstraction
+  }
+  #TODO
+  set HIER_DESIGNS "${DDC_HIER_DESIGNS} ${DC_BLOCK_ABSTRACTION_DESIGNS}"
+  # Prevent optimization of top-level logic based on physical block contents
+  # (required for hierarchical formal verification flow)
+  set_boundary_optimization ${HIER_DESIGNS} false
+  set_app_var compile_preserve_subdesign_interfaces true
+  set_app_var compile_enable_constant_propagation_with_no_boundary_opt false
+  
+  #################################################################################
+  # Propagate UPF Data from Hierarchical Blocks to Top
+  #################################################################################
+  
+  # For the top-level design in a UPF hierarchical flow, remove the block-level
+  # scenarios in memory before propagating the power supply data.
+  remove_scenario -all
+  propagate_constraints -power_supply_data
+}
+
+/home1/BPPD08/NavEeN/internship/simpleuart/dc_results/netlist.ddc
+SNPS_CLOCK_GATE_HIGH_simpleuart_0       SNPS_CLOCK_GATE_HIGH_simpleuart_5
+SNPS_CLOCK_GATE_HIGH_simpleuart_1       SNPS_CLOCK_GATE_HIGH_simpleuart_6
+SNPS_CLOCK_GATE_HIGH_simpleuart_2       SNPS_CLOCK_GATE_HIGH_simpleuart_7
+SNPS_CLOCK_GATE_HIGH_simpleuart_3       simpleuart
+SNPS_CLOCK_GATE_HIGH_simpleuart_4
+
+/home1/BPPD08/NavEeN/internship/spimemio/dc_outputs/spimemio.mapped.ddc
+SNPS_CLOCK_GATE_HIGH_spimemio_0         SNPS_CLOCK_GATE_HIGH_spimemio_xfer_0
+SNPS_CLOCK_GATE_HIGH_spimemio_0_1       SNPS_CLOCK_GATE_HIGH_spimemio_xfer_1
+SNPS_CLOCK_GATE_HIGH_spimemio_1         SNPS_CLOCK_GATE_HIGH_spimemio_xfer_2
+SNPS_CLOCK_GATE_HIGH_spimemio_2         SNPS_CLOCK_GATE_HIGH_spimemio_xfer_3
+SNPS_CLOCK_GATE_HIGH_spimemio_3         SNPS_CLOCK_GATE_HIGH_spimemio_xfer_4
+SNPS_CLOCK_GATE_HIGH_spimemio_4         spimemio
+SNPS_CLOCK_GATE_HIGH_spimemio_5         spimemio_DW01_add_0
+SNPS_CLOCK_GATE_HIGH_spimemio_6         spimemio_xfer
+SNPS_CLOCK_GATE_HIGH_spimemio_7
+
+/home1/BPPD08/NavEeN/internship/top/dc_work/raven_soc.db
+raven_soc (*)
+
+/home1/BPPD08/NavEeN/internship/top/dc_work/picorv32_1_1_1_1_1_0_00100000_00000000_00001000.db
+picorv32_1_1_1_1_1_0_00100000_00000000_00001000
+
+/home1/BPPD08/NavEeN/internship/top/dc_work/picorv32_pcpi_mul.db
+picorv32_pcpi_mul
+
+/home1/BPPD08/NavEeN/internship/top/dc_work/picorv32_pcpi_div.db
+picorv32_pcpi_div
+Error: unknown command 'remove_scenario' (CMD-005)
+#################################################################################
+# Load UPF MV Setup
+#
+# golden.upf, a UPF template file, can be used as a reference to develop a UPF-based
+# low power intent file.
+#
+# You can also use Visual UPF in Design Vision to generate a UPF template for
+# your design. To open the Visual UPF dialog box, choose Power > Visual UPF.
+# For information about Visual UPF, see the Power Compiler User Guide.
+#
+#################################################################################
+set upf_create_implicit_supply_sets truetrue
+dcnxt_shell> remove_upf
+1
+dcnxt_shell> if {$UPF_MODE != "none"} {
+  if {$UPF_FILE != ""} {
+    set load_upf_cmd "load_upf ${UPF_FILE}"
+
+    if {$UPF_MODE == "golden"} {lappend load_upf_cmd -strict_check true}
+
+    puts "RM-info: Running $load_upf_cmd"
+    eval ${load_upf_cmd}
+  }
+}RM-info: Running load_upf ../files//raven_soc.upf -strict_check true
+
+
+Loading Golden UPF file ../files//raven_soc.upf ...
+load_upf "/home1/BPPD08/NavEeN/internship/simpleuart/files/simpleuart.upf" -scope simpleuart
+
+
+Loading Golden UPF file /home1/BPPD08/NavEeN/internship/simpleuart/files/simpleuart.upf ...
+create_power_domain PD -include_scope
+create_supply_port VDD -direction in 
+create_supply_port VSS -direction in 
+create_supply_net  VDD
+create_supply_net VSS
+set_domain_supply_net PD -primary_power_net VDD -primary_ground_net VSS
+connect_supply_net VDD -ports VDD
+connect_supply_net VSS -ports VSS
+End loading UPF file /home1/BPPD08/NavEeN/internship/simpleuart/files/simpleuart.upf
+load_upf "/home1/BPPD08/NavEeN/internship/spimemio/files/spimemio.upf" -scope spimemio
+
+
+Loading Golden UPF file /home1/BPPD08/NavEeN/internship/spimemio/files/spimemio.upf ...
+create_power_domain PDm -include_scope
+create_supply_port VDD -direction in 
+create_supply_port VSS -direction in 
+create_supply_port VDDo -direction in
+create_supply_net  VDD
+create_supply_net VSS
+create_supply_net VDDo
+set_related_supply_net -ground VSS -power VDDo
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port pll_clk (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port pll_clk (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ext_clk (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ext_clk (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ext_clk_sel (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ext_clk_sel (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ext_reset (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ext_reset (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port reset (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port reset (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wenb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wenb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_addr[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_addr[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[31] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[31] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[30] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[30] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[29] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[29] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[28] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[28] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[27] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[27] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[26] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[26] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[25] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[25] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[24] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[24] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[23] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[23] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[22] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[22] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[21] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[21] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[20] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[20] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[19] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[19] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[18] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[18] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[17] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[17] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[16] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[16] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_wdata[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_wdata[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[31] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[31] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[30] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[30] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[29] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[29] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[28] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[28] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[27] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[27] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[26] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[26] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[25] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[25] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[24] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[24] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[23] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[23] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[22] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[22] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[21] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[21] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[20] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[20] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[19] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[19] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[18] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[18] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[17] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[17] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[16] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[16] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ram_rdata[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ram_rdata[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_out[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_out[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_in[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_in[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pullup[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pullup[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_pulldown[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_pulldown[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[15] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[15] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[14] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[14] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[13] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[13] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[12] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[12] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port gpio_outenb[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port gpio_outenb[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_convert (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_convert (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_data[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_data[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_done (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_done (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_clk (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_clk (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_inputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_inputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc0_inputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc0_inputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_convert (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_convert (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_clk (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_clk (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_inputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_inputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_inputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_inputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_data[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_data[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port adc1_done (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port adc1_done (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port dac_value[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port dac_value[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port analog_out_sel (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port analog_out_sel (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port opamp_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port opamp_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port opamp_bias_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port opamp_bias_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port bg_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port bg_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_ninputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_ninputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_ninputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_ninputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_pinputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_pinputsrc[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_pinputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_pinputsrc[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port rcosc_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port rcosc_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port overtemp_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port overtemp_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port overtemp (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port overtemp (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port rcosc_in (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port rcosc_in (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port xtal_in (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port xtal_in (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port comp_in (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port comp_in (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_sck (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_sck (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_config[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_config[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_xtal_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_xtal_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_reg_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_reg_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_cp_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_cp_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_vco_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_vco_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_bias_ena (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_bias_ena (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_trim[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_trim[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_trim[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_trim[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_trim[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_trim[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_pll_trim[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_pll_trim[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[11] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[11] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[10] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[10] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[9] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[9] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[8] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[8] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mfgr_id[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mfgr_id[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[7] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[7] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[6] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[6] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[5] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[5] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[4] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[4] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_prod_id[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_prod_id[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mask_rev[3] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mask_rev[3] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mask_rev[2] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mask_rev[2] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mask_rev[1] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mask_rev[1] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port spi_ro_mask_rev[0] (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port spi_ro_mask_rev[0] (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ser_tx (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ser_tx (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port ser_rx (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port ser_rx (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port irq_pin (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port irq_pin (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port irq_spi (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port irq_spi (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port trap (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port trap (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_csb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_csb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_clk (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_clk (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io0_oeb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io0_oeb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io1_oeb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io1_oeb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io2_oeb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io2_oeb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io3_oeb (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io3_oeb (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io0_do (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io0_do (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io1_do (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io1_do (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io2_do (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io2_do (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io3_do (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io3_do (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io0_di (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io0_di (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io1_di (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io1_di (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io2_di (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io2_di (UPF-239)
+Warning: Supply net spimemio/VDDo belongs to a lower scope than port flash_io3_di (UPF-239)
+Warning: Supply net spimemio/VSS belongs to a lower scope than port flash_io3_di (UPF-239)
+set_domain_supply_net PDm -primary_power_net VDD -primary_ground_net VSS
+connect_supply_net VDD -ports VDD
+connect_supply_net VDDo -ports VDDo
+connect_supply_net VSS -ports VSS
+
+End loading UPF file /home1/BPPD08/NavEeN/internship/spimemio/files/spimemio.upf
+create_power_domain PDs -include_scope
+create_supply_port VDD -direction in 
+create_supply_port VDDh -direction in 
+create_supply_port VSS -direction in 
+create_supply_net  VDD
+create_supply_net  VDDh
+create_supply_net VSS
+set_domain_supply_net PDs -primary_power_net VDD -primary_ground_net VSS
+connect_supply_net VDD -ports {VDD spimemio/VDDo simpleuart/VDD}
+connect_supply_net VSS -ports {VSS spimemio/VSS spimemio/VSS}
+connect_supply_net VDDh -ports {VDDh spimemio/VDD}
+End loading UPF file ../files//raven_soc.upf
+1
+dcnxt_shell> set_attr [get_lib_cells */*_LVLDBUF_*] dont_use false
+Information: Attribute 'dont_use' is set on 32 objects. (UID-186)
+saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_10 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_12 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_1 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_2 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_3 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_4 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_6 saed14rvt_dlvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_8 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_10 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_12 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_1 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_2 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_3 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_4 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_6 saed14lvt_dlvl_ss0p6v125c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_8 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_10 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_12 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_1 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_2 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_3 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_4 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_6 saed14lvt_dlvl_ss0p72vm40c_i0p6v/SAEDLVT14_LVLDBUF_IY2V1_8 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_10 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_12 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_1 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_2 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_3 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_4 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_6 saed14rvt_dlvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLDBUF_IY2V1_8
+#We dont want redundant Level Shifter Insertion
+set_attr [get_lib_cells */*_LVLUBUF_*] dont_use trueInformation: Attribute 'dont_use' is set on 64 objects. (UID-186)
+saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_10 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_12 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_1 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_2 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_3 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_4 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_6 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2_8 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_10 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_12 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_1 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_2 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_3 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_4 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_6 saed14rvt_ulvl_ss0p72v125c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_8 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_10 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_12 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_1 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_2 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_3 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_4 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_6 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2_8 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_10 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_12 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_1 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_2 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_3 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_4 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_6 saed14lvt_ulvl_ss0p72v125c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_8 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_10 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_12 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_1 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_2 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_3 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_4 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_6 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2_8 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_10 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_12 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_1 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_2 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_3 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_4 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_6 saed14lvt_ulvl_ss0p6vm40c_i0p6v/SAEDLVT14_LVLUBUF_IY2V1_8 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_10 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_12 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_1 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_2 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_3 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_4 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_6 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2_8 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_10 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_12 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_1 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_2 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_3 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_4 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_6 saed14rvt_ulvl_ss0p6vm40c_i0p6v/SAEDRVT14_LVLUBUF_IY2V1_8
+dcnxt_shell> #################################################################################
+# Define Operating Voltages on Power Nets
+#################################################################################
+# Important Note: set_related_supply net settings should now be included in the
+#                 RTL UPF otherwise Formality verification will fail.
+# set_voltage commands will be written out in SDC version 1.8 and might
+# be defined as a part of the SDC for your design.
+set_voltage 0.6 -object_list {VDD}
+1
+set_voltage 0.72 -object_list {VDDh}
+1
+set_voltage 0.00 -object_list {VSS}
+1
+dcnxt_shell> set check_mv_design_failed false
+false
+if {[shell_is_in_topographical_mode]} {
+  ## For MCMM, perform this check for each scenario.
+  set current_scenario_saved [current_scenario]
+  foreach scenario [all_active_scenarios] {
+    current_scenario ${scenario}
+    if {![check_mv_design -power_nets]} {
+      set check_mv_design_failed true
+      break
+    }
+  }
+  current_scenario ${current_scenario_saved}
+} else {
+  if {![check_mv_design -power_nets]} {
+    set check_mv_design_failed true
+  }
+}--------------------------------------------------------------------------------
+                      Power/Ground Pin Connection Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+--------------------------------------------------------------------------------
+                         Supply Operating Voltage Checks
+--------------------------------------------------------------------------------
+Error: Supply net simpleuart/PD.primary.ground does not have a defined operating voltage . (UPF-057)
+Error: Supply net simpleuart/VSS does not have a defined operating voltage . (UPF-057)
+
+Please review report above for warnings and errors.
+true
+Current design is 'raven_soc'.
+dcnxt_shell> remove_upf
+1
+dcnxt_shell> set_voltage 0.6 -object_list {VDD}
+Warning: Can't find supply nets or internal power pins matching 'VDD' in design 'raven_soc'. (UID-95)
+Error: Cannot set_voltage on an empty list of supply net(s). (UPF-087)
+0
+set_voltage 0.72 -object_list {VDDh}
+Warning: Can't find supply nets or internal power pins matching 'VDDh' in design 'raven_soc'. (UID-95)
+Error: Cannot set_voltage on an empty list of supply net(s). (UPF-087)
+0
+set_voltage 0.00 -object_list {VSS}
+Warning: Can't find supply nets or internal power pins matching 'VSS' in design 'raven_soc'. (UID-95)
+Error: Cannot set_voltage on an empty list of supply net(s). (UPF-087)
+0
+dcnxt_shell> set check_mv_design_failed false
+false
+if {[shell_is_in_topographical_mode]} {
+  ## For MCMM, perform this check for each scenario.
+  set current_scenario_saved [current_scenario]
+  foreach scenario [all_active_scenarios] {
+    current_scenario ${scenario}
+    if {![check_mv_design -power_nets]} {
+      set check_mv_design_failed true
+      break
+    }
+  }
+  current_scenario ${current_scenario_saved}
+} else {
+  if {![check_mv_design -power_nets]} {
+    set check_mv_design_failed true
+  }
+}
+--------------------------------------------------------------------------------
+                      Power/Ground Pin Connection Checks
+--------------------------------------------------------------------------------
+Error: Supply net connection cannot be determined for power pin VDD on cell spimemio/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell spimemio/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell spimemio/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell spimemio/U929. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell spimemio/U929. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell spimemio/U929. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell spimemio/U935. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell spimemio/U935. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell spimemio/U935. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U201. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U201. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U201. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U206. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U206. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U206. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U390. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U390. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U390. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U409. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U409. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U409. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U665. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U665. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U665. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U684. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U684. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U684. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U685. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U686. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U686. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U686. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U698. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U698. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U698. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell simpleuart/U811. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell simpleuart/U811. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell simpleuart/U811. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell spimemio/xfer/U15. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell spimemio/xfer/U15. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell spimemio/xfer/U15. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDD on cell spimemio/xfer/U148. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VDDR on cell spimemio/xfer/U148. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Supply net connection cannot be determined for power pin VSS on cell spimemio/xfer/U148. (UPF-067)
+Failure Reason: No power domain for cell instance
+Error: Power net hookup for power domains is not specified properly.   (MV-503)
+
+--------------------------------------------------------------------------------
+                         Supply Operating Voltage Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+Please review report above for warnings and errors.
+true
+if {$check_mv_design_failed} {
+  puts "RM-error: One or more supply nets are missing a defined voltage.  Use the set_voltage command to set the appropriate voltage upon the supply."
+  puts "This script will now exit."
+  exit 1
+}
+RM-error: One or more supply nets are missing a defined voltage.  Use the set_voltage command to set the appropriate voltage upon the supply.
+This script will now exit.
+
+Memory usage for this session 2082 Mbytes.
+Memory usage for this session including child processes 2082 Mbytes.
+CPU usage for this session 154 seconds ( 0.04 hours ).
+Elapsed time for this session 2523 seconds ( 0.70 hours ).
+
+Thank you...

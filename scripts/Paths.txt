@@ -1,0 +1,76 @@
+set opensparc "/home/14_nmts/14_nmts/references/opensparc/opensparc/"
+set iop "$opensparc/design/sys/iop"
+set rtl_path {}
+set rtl_path "$rtl_path $iop/fpu/rtl"
+set rtl_path "$rtl_path $iop/common/rtl"
+set rtl_path "$rtl_path $iop/pr_macro/rtl"
+set rtl_path "$rtl_path $iop/srams/rtl"
+set_app_var search_path "$search_path $iop/include $rtl_path "
+
+TECH_FILE "/home/14_nmts/14_nmts/tech/milkyway/saed14nm_1p9m_mw.tf"   
+REFERENCE_LIBRARY             "/home/14_nmts/14_nmts/stdcell_hvt/ndm/saed14hvt_frame_only.ndm \
+				   /home/14_nmts/14_nmts/stdcell_slvt/ndm/saed14slvt_frame_only.ndm \
+				   /home/14_nmts/14_nmts/stdcell_rvt/ndm/saed14rvt_frame_only.ndm \
+				   /home/14_nmts/14_nmts/stdcell_lvt/ndm/saed14lvt_frame_only.ndm"  
+
+
+#########Target Libraries for SoC#####################
+TARGET_LIBRARY_FILES  "/home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p72v125c.db \
+			   /home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+			   /home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+			   /home/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db \
+                           /home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \
+			   /home/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6v125c.db"
+###########Target Libraries for FPU MUL################
+TARGET_LIBRARY_FILES  "/home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p72v125c.db \
+			   /home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db \
+			   /home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ulvl_ss0p72v125c_i0p6v.db \
+			   /home/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db "
+
+#############Target Libraries for FPU ADD##############
+
+TARGET_LIBRARY_FILES  "/home/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db \
+			   /home/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p6v125c.db "
+			   
+			   
+#############################################UPF Constraints#########################################################			   
+			   
+###########################FPU_ADD############################			   
+power domain PD
+supply port VDD VSS
+supply net VDD VSS
+create_supply_net VSS 
+domain supply net PD -primary power VDD 
+		     -primary ground VSS
+
+##################################FPU_MUL#########################
+power domain PDm 
+supply port VDD VDDo VSS
+related supply -power VDDo -ground VSS
+domain supply -primary power VDD 
+              -primary_ground  VSS
+              
+##############################SoC########################              
+              
+       power domain PD
+       supply port VDD VDDh VSS
+       supply_net VDD -ports {VDD fpu_add/VDD fpu_mul/VDDo}
+	supply net VSS -ports {VSS fpu_add/VSS fpu_mul/VSS}
+	supply net VDDh -ports {VDDh fpu_mul/VDD}
+
+
+#############################################SDC Constraints#########################################################			   
+			   
+Name of the clock  		:		rclk 
+Name of the clock 		:		gclk(top)
+Need to create two sdc files for two modes 
+  Mode			-	func_turbo	func
+Clock period 		:	1.333		1.666    
+Input delay  			:	0.55		0.75
+Output delay 		:	0.55		0.75
+Maximum load for pins	:	0.004		0.004
+Maximum fanout  		:	200		200
+Maximum capacitance  	:	0.1		0.1
+Maximum transition 	:	100		100
+
+

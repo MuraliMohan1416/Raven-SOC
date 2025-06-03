@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : resolved_strategy
+Design : raven_soc
+Version: T-2022.03-SP4
+Date   : Tue May 13 17:25:44 2025
+****************************************
+
+Attributes that prevent power management cell insertion
+      dt - dont_touch
+      an - analog net
+     pad - pad-port path
+      pg - power/ground pin
+      da - dangling pin
+
+Resolved Isolation strategies: No strategies to report
+
+Resolved Level shifter strategies: No strategies to report
+
+Resolved Repeater strategies: No strategies to report
+
+Resolved Retention strategies: No strategies to report
+Warning: Found 60 pin to pin connections requiring level shifter(s).  (MV-229)
+Warning: Found 440 level shifter library cell(s) that are not in the correct power and ground(PG) pin format. (MV-167)
+Warning: No operating condition has been set explicitly on the current design. A default operating condition ss0p6v125c from library saed14rvt_ss0p6v125c will be assumed. (MV-028)
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+Warning: No operating condition has been set explicitly on the current design. A default operating condition will be assumed. (MV-028)
+
+Non-default variable settings:
+--------------------------------------------------------------------------------
+No non-default variable values to report
+--------------------------------------------------------------------------------
+
+Isolation mapping failures:
+
+Element(s)                                  Strategy   Domain     Clamp Sense Reasons
+--------------------------------------------------------------------------------------------------------------
+Isolation mapping should succeed.
+--------------------------------------------------------------------------------------------------------------
+
+Enable level shifter mapping failures:
+
+Element(s)                                  Strategy   Domain     Clamp Sense Reasons
+--------------------------------------------------------------------------------------------------------------
+Enable level shifter mapping should succeed.
+--------------------------------------------------------------------------------------------------------------
+
+
+
+Level shifter insertion failures:
+
+Index  Path Drivers                                   Reasons
+----------------------------------------------------------------------------------------------------
+
+Level shifter insertion should succeed.
+----------------------------------------------------------------------------------------------------
+
+
+Information: All isolation, enable level shifter and level shifter cells can be mapped. (UPF-908)
+1

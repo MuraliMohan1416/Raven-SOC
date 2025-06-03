@@ -1,0 +1,18 @@
+load_upf "/home1/BPPD08/NavEeN/internship/simpleuart/files/simpleuart.upf" -scope simpleuart
+load_upf "/home1/BPPD08/NavEeN/internship/spimemio/files/spimemio.upf" -scope spimemio
+
+create_power_domain PDs -include_scope
+
+create_supply_port VDD -direction in 
+create_supply_port VDDh -direction in 
+create_supply_port VSS -direction in 
+
+create_supply_net  VDD
+create_supply_net  VDDh
+create_supply_net VSS
+
+set_domain_supply_net PDs -primary_power_net VDD -primary_ground_net VSS
+
+connect_supply_net VDD -ports {VDD spimemio/VDDo simpleuart/VDD}
+connect_supply_net VSS -ports {VSS simpleuart/VSS spimemio/VSS}
+connect_supply_net VDDh -ports {VDDh spimemio/VDD}

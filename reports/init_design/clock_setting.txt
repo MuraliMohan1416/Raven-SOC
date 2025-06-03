@@ -1,0 +1,588 @@
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Top design (Reference: raven_soc.design) is treated as modifiable. (HOPT-001)
+Information: 2 sub-block instances are treated as non-modifiable. (HOPT-003)
+****************************************
+ Report : clock settings
+ Design : raven_soc
+ Date   : Thu May 29 16:11:15 2025
+****************************************
+
+
+======================================
+Configurations 
+======================================
+
+##Global
+Mode = func
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+Mode = turbo
+  Corner = ss0p6v125c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+Mode = func
+##pll_clk
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+##ext_clk
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+
+Mode = turbo
+##pll_clk
+  Corner = ss0p6v125c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+##ext_clk
+  Corner = ss0p6v125c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+  Corner = ss0p6vm40c
+    Max transition: 0.500
+    Max capacitance: 50.000
+    Target skew: 0 (default)
+    Target latency: Not specified
+
+
+======================================
+Routing Rules 
+======================================
+
+##Global
+Routing rule for sink nets: rm_leaf  Min Layer:M2 Max Layer:M8
+Routing rule for internal nets: rm_2w2s_shield_list  Min Layer:M2 Max Layer:M8
+Routing rule for root nets: rm_2w2s_shield_list  Min Layer:M2 Max Layer:M8
+Routing rule for all nets: Not specified
+Net-based routing rules (by set_clock_routing_rule): Not specified
+Net-based routing rules (by set_routing_rule): Not specified
+
+Mode = func
+
+##pll_clk
+Routing rule for sink nets: Not specified
+Routing rule for internal nets: Not specified
+Routing rule for root nets: Not specified
+Routing rule for all nets: Not specified
+Net-based routing rules (by set_clock_routing_rule): Not specified
+Net-based routing rules (by set_routing_rule): Not specified
+
+##ext_clk
+Routing rule for sink nets: Not specified
+Routing rule for internal nets: Not specified
+Routing rule for root nets: Not specified
+Routing rule for all nets: Not specified
+Net-based routing rules (by set_clock_routing_rule): Not specified
+Net-based routing rules (by set_routing_rule): Not specified
+
+Mode = turbo
+
+##pll_clk
+Routing rule for sink nets: Not specified
+Routing rule for internal nets: Not specified
+Routing rule for root nets: Not specified
+Routing rule for all nets: Not specified
+Net-based routing rules (by set_clock_routing_rule): Not specified
+Net-based routing rules (by set_routing_rule): Not specified
+
+##ext_clk
+Routing rule for sink nets: Not specified
+Routing rule for internal nets: Not specified
+Routing rule for root nets: Not specified
+Routing rule for all nets: Not specified
+Net-based routing rules (by set_clock_routing_rule): Not specified
+Net-based routing rules (by set_routing_rule): Not specified
+
+
+======================================
+Buffers and Inverters 
+======================================
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+
+##Buffers
+Name                                   Area      Max Transition       Max Load
+------------------------------------------------------------------------------
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_10
+                                      0.710                 inf        289.700
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_12
+                                      0.844                 inf        348.700
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_16
+                                      1.066                 inf        466.200
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_1P5
+                                      0.311                 inf         44.470
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_1
+                                      0.266                 inf         30.260
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_20
+                                      1.288                 inf        583.300
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_2
+                                      0.311                 inf         58.110
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_3
+                                      0.355                 inf         87.960
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_4
+                                      0.400                 inf        116.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_6
+                                      0.488                 inf        173.700
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_8
+                                      0.622                 inf        232.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_CDC_2
+                                      0.311                 inf         58.120
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_CDC_4
+                                      0.400                 inf        116.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_1
+                                      0.266                 inf         30.290
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_2
+                                      0.488                 inf         60.270
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_3
+                                      0.622                 inf         90.030
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_4
+                                      0.888                 inf        120.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_6
+                                      1.154                 inf        179.400
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_7
+                                      1.288                 inf        208.400
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_ECO_8
+                                      1.421                 inf        237.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_0P5
+                                      0.266                 inf         15.360
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_0P75
+                                      0.266                 inf         22.930
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_10
+                                      0.755                 inf        290.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_12
+                                      0.844                 inf        342.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_16
+                                      1.110                 inf        463.700
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_1P5
+                                      0.311                 inf         22.910
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_1
+                                      0.266                 inf         30.260
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_20
+                                      1.288                 inf        579.300
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_2
+                                      0.311                 inf         58.110
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_3
+                                      0.400                 inf         87.910
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_4
+                                      0.400                 inf        116.200
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_6
+                                      0.488                 inf        173.900
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_S_8
+                                      0.666                 inf        232.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_U_0P5
+                                      0.266                 inf         15.350
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_U_0P75
+                                      0.266                 inf         22.930
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_UCDC_0P5
+                                      0.266                 inf         15.350
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_UCDC_1
+                                      0.266                 inf         30.150
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_L4D100_1
+                                      0.488                 inf         30.910
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_L4D100_2
+                                      0.533                 inf         59.290
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V1_1
+                                      0.311                 inf         30.050
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V1_2
+                                      0.355                 inf         57.540
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V2_1
+                                      0.355                 inf         16.030
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V2_2
+                                      0.488                 inf         29.380
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V3_1
+                                      0.400                 inf         16.070
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_R2V3_2
+                                      0.488                 inf         31.560
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_10
+                                      0.710                 inf        189.700
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_12
+                                      0.844                 inf        227.400
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_16
+                                      1.066                 inf        303.600
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_1P5
+                                      0.311                 inf         28.730
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_1
+                                      0.266                 inf         19.360
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_20
+                                      1.288                 inf        379.900
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_2
+                                      0.311                 inf         37.980
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_3
+                                      0.355                 inf         57.080
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_4
+                                      0.400                 inf         76.000
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_6
+                                      0.488                 inf        113.500
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_8
+                                      0.622                 inf        151.800
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_CDC_2
+                                      0.311                 inf         37.990
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_CDC_4
+                                      0.400                 inf         76.000
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_1
+                                      0.266                 inf         19.370
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_2
+                                      0.488                 inf         38.540
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_3
+                                      0.622                 inf         57.640
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_4
+                                      0.888                 inf         77.130
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_6
+                                      1.154                 inf        114.700
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_7
+                                      1.288                 inf        133.100
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_ECO_8
+                                      1.421                 inf        151.400
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_0P5
+                                      0.266                 inf          9.749
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_0P75
+                                      0.266                 inf         14.590
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_10
+                                      0.755                 inf        189.400
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_12
+                                      0.844                 inf        227.000
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_16
+                                      1.110                 inf        303.300
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_1P5
+                                      0.311                 inf         14.600
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_1
+                                      0.266                 inf         19.400
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_20
+                                      1.288                 inf        379.800
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_2
+                                      0.311                 inf         37.960
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_3
+                                      0.400                 inf         57.000
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_4
+                                      0.400                 inf         75.940
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_6
+                                      0.488                 inf        113.400
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_S_8
+                                      0.666                 inf        151.700
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_U_0P5
+                                      0.266                 inf          9.741
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_U_0P75
+                                      0.266                 inf         14.590
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_UCDC_0P5
+                                      0.266                 inf          9.741
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_UCDC_1
+                                      0.266                 inf         19.350
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_L4D100_1
+                                      0.488                 inf         19.690
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_L4D100_2
+                                      0.533                 inf         38.540
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V1_1
+                                      0.311                 inf         19.230
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V1_2
+                                      0.355                 inf         37.550
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V2_1
+                                      0.355                 inf          9.549
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V2_2
+                                      0.488                 inf         18.000
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V3_1
+                                      0.400                 inf          9.580
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_R2V3_2
+                                      0.488                 inf         19.200
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PECO_12
+                                      0.888                 inf         93.630
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PECO_1
+                                      0.488                 inf         23.430
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PECO_2
+                                      0.488                 inf         46.540
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PECO_4
+                                      0.888                 inf         93.620
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PECO_8
+                                      0.888                 inf         93.630
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PS_0P75
+                                      0.311                 inf         20.090
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PS_1P5
+                                      0.355                 inf         39.120
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PS_3
+                                      0.444                 inf         75.130
+saed14lvt_ss0p6vm40c/SAEDLVT14_BUF_PS_6
+                                      0.710                 inf        146.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_DEL_PR2V2_1
+                                      0.622                 inf         12.810
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOBUF_IW_0P75
+                                      0.533                 inf         20.180
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOBUF_IW_1P5
+                                      0.533                 inf         23.390
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOBUF_IW_3
+                                      0.533                 inf         23.360
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOBUF_IW_6
+                                      0.533                 inf         23.350
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PECO_12
+                                      0.888                 inf         59.760
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PECO_1
+                                      0.488                 inf         14.960
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PECO_2
+                                      0.488                 inf         29.730
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PECO_4
+                                      0.888                 inf         59.760
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PECO_8
+                                      0.888                 inf         59.760
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PS_0P75
+                                      0.311                 inf         13.020
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PS_1P5
+                                      0.355                 inf         25.680
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PS_3
+                                      0.444                 inf         49.810
+saed14rvt_ss0p6v125c/SAEDRVT14_BUF_PS_6
+                                      0.710                 inf         96.980
+saed14rvt_ss0p6v125c/SAEDRVT14_DEL_PR2V2_1
+                                      0.622                 inf          7.994
+saed14rvt_ss0p6v125c/SAEDRVT14_AOBUF_IW_0P75
+                                      0.533                 inf         13.090
+saed14rvt_ss0p6v125c/SAEDRVT14_AOBUF_IW_1P5
+                                      0.533                 inf         14.950
+saed14rvt_ss0p6v125c/SAEDRVT14_AOBUF_IW_3
+                                      0.533                 inf         14.960
+saed14rvt_ss0p6v125c/SAEDRVT14_AOBUF_IW_6
+                                      0.533                 inf         14.920
+
+##Inverters
+Name                                   Area      Max Transition       Max Load
+------------------------------------------------------------------------------
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_0P5
+                                      0.178                 inf         15.070
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_0P75
+                                      0.178                 inf         22.390
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_10
+                                      0.577                 inf        273.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_12
+                                      0.666                 inf        330.400
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_16
+                                      0.844                 inf        445.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_1P5
+                                      0.178                 inf         29.580
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_1
+                                      0.178                 inf         19.430
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_20
+                                      1.021                 inf        566.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_2
+                                      0.222                 inf         53.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_3
+                                      0.266                 inf         43.440
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_4
+                                      0.311                 inf        107.300
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_6
+                                      0.400                 inf        162.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_8
+                                      0.488                 inf        217.900
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_1
+                                      0.222                 inf         29.620
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_2
+                                      0.355                 inf         54.830
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_3
+                                      0.488                 inf         82.300
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_4
+                                      0.622                 inf        109.200
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_6
+                                      0.888                 inf        165.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_ECO_8
+                                      1.154                 inf        220.400
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_0P5
+                                      0.178                 inf         15.080
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_0P75
+                                      0.178                 inf         22.390
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_10
+                                      0.577                 inf        273.700
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_12
+                                      0.666                 inf        330.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_16
+                                      0.844                 inf        445.900
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_1P5
+                                      0.222                 inf         40.860
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_1
+                                      0.178                 inf         29.590
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_20
+                                      1.021                 inf        566.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_2
+                                      0.222                 inf         53.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_3
+                                      0.311                 inf         80.860
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_4
+                                      0.311                 inf        107.600
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_5
+                                      0.400                 inf        135.600
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_6
+                                      0.400                 inf        162.000
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_7
+                                      0.488                 inf        190.900
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_8
+                                      0.488                 inf        217.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_S_9
+                                      0.577                 inf        246.400
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_0P5
+                                      0.178                 inf          9.755
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_0P75
+                                      0.178                 inf         14.580
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_10
+                                      0.577                 inf        190.300
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_12
+                                      0.666                 inf        228.500
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_16
+                                      0.844                 inf        305.500
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_1P5
+                                      0.178                 inf         19.430
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_1
+                                      0.178                 inf         19.430
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_20
+                                      1.021                 inf        353.800
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_2
+                                      0.222                 inf         38.040
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_3
+                                      0.266                 inf         43.440
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_4
+                                      0.311                 inf         76.250
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_6
+                                      0.400                 inf        114.100
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_8
+                                      0.488                 inf        152.300
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_1
+                                      0.222                 inf         19.410
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_2
+                                      0.355                 inf         38.870
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_3
+                                      0.488                 inf         58.060
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_4
+                                      0.622                 inf         77.320
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_6
+                                      0.888                 inf        116.300
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_ECO_8
+                                      1.154                 inf        154.400
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_0P5
+                                      0.178                 inf          9.765
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_0P75
+                                      0.178                 inf         14.580
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_10
+                                      0.577                 inf        190.500
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_12
+                                      0.666                 inf        228.500
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_16
+                                      0.844                 inf        305.600
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_1P5
+                                      0.222                 inf         28.870
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_1
+                                      0.178                 inf         19.430
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_20
+                                      1.021                 inf        354.200
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_2
+                                      0.222                 inf         38.030
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_3
+                                      0.311                 inf         57.330
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_4
+                                      0.311                 inf         76.270
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_5
+                                      0.400                 inf         95.280
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_6
+                                      0.400                 inf        114.100
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_7
+                                      0.488                 inf        133.600
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_8
+                                      0.488                 inf        152.600
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_S_9
+                                      0.577                 inf        172.200
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOINV_IW_0P5
+                                      0.400                 inf         13.470
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOINV_IW_1
+                                      0.400                 inf         22.370
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOINV_IW_2
+                                      0.444                 inf         45.040
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOINV_IW_4
+                                      0.533                 inf         83.710
+saed14lvt_ss0p6vm40c/SAEDLVT14_AOINV_IW_6
+                                      0.622                 inf        126.100
+saed14rvt_ss0p6v125c/SAEDRVT14_AOINV_IW_0P5
+                                      0.400                 inf          8.857
+saed14rvt_ss0p6v125c/SAEDRVT14_AOINV_IW_1
+                                      0.400                 inf         15.060
+saed14rvt_ss0p6v125c/SAEDRVT14_AOINV_IW_2
+                                      0.444                 inf         29.800
+saed14rvt_ss0p6v125c/SAEDRVT14_AOINV_IW_4
+                                      0.533                 inf         59.630
+saed14rvt_ss0p6v125c/SAEDRVT14_AOINV_IW_6
+                                      0.622                 inf         89.860
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PECO_12
+                                      1.687                 inf        288.100
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PECO_1
+                                      0.355                 inf         25.210
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PECO_2
+                                      0.355                 inf         46.710
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PECO_4
+                                      0.622                 inf         94.160
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PECO_8
+                                      1.154                 inf        190.500
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PS_1
+                                      0.178                 inf         23.390
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PS_2
+                                      0.222                 inf         46.190
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PS_3
+                                      0.266                 inf         64.190
+saed14lvt_ss0p6vm40c/SAEDLVT14_INV_PS_6
+                                      0.400                 inf        128.500
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PECO_12
+                                      1.687                 inf        203.000
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PECO_1
+                                      0.355                 inf         16.900
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PECO_2
+                                      0.355                 inf         33.930
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PECO_4
+                                      0.622                 inf         67.860
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PECO_8
+                                      1.154                 inf        135.100
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PS_1
+                                      0.178                 inf         16.960
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PS_2
+                                      0.222                 inf         33.380
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PS_3
+                                      0.266                 inf         46.670
+saed14rvt_ss0p6v125c/SAEDRVT14_INV_PS_6
+                                      0.400                 inf         93.140
+
+
+======================================
+Spacing Rules 
+======================================
+
+##By design
+No by design spacing rule is specified
+
+##By clock
+No by clock spacing rule is specified
+
+##By libcell
+No by libcell spacing rule is specified
+
+##By clock and libcell
+No by clock and libcell spacing rule is specified
+1

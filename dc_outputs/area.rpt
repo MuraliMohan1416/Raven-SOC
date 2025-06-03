@@ -1,0 +1,33 @@
+ 
+****************************************
+Report : area
+Design : raven_soc
+Version: T-2022.03-SP4
+Date   : Tue May 13 18:03:08 2025
+****************************************
+
+Library(s) Used:
+
+    saed14rvt_ss0p6v125c (File: /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db)
+    saed14rvt_dlvl_ss0p72v125c_i0p6v (File: /home1/14_nmts/14_nmts/stdcell_rvt/db_ccs/saed14rvt_dlvl_ss0p72v125c_i0p6v.db)
+    saed14lvt_ss0p72v125c (File: /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ss0p72v125c.db)
+    saed14lvt_ulvl_ss0p72v125c_i0p6v (File: /home1/14_nmts/14_nmts/stdcell_lvt/db_ccs/saed14lvt_ulvl_ss0p72v125c_i0p6v.db)
+
+Number of ports:                         3420
+Number of nets:                         13928
+Number of cells:                        11414
+Number of combinational cells:           8813
+Number of sequential cells:              2500
+Number of macros/black boxes:               0
+Number of buf/inv:                       1549
+Number of references:                      39
+
+Combinational area:               3362.056779
+Buf/Inv area:                      355.111195
+Noncombinational area:            2691.705628
+Macro/Black Box area:                0.000000
+Net Interconnect area:           12813.644778
+
+Total cell area:                  6053.762407
+Total area:                      18867.407185
+1

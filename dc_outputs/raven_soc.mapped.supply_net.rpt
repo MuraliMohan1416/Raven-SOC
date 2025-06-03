@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : supply_net
+Design : raven_soc
+Version: T-2022.03-SP4
+Date   : Tue May 13 18:03:08 2025
+****************************************
+
+------------------------------------------------------------------------------
+
+ Supply Net            : VDD
+ Current Scope         : raven_soc
+ Operating Voltage     : -- Maximum --    -- Minimum --   
+                            (0.60)           (0.60)
+
+ Supply States         : No supply states defined for the net. 
+ Power Domain          : PD PDs(*) PDm  
+
+------------------------------------------------------------------------------
+
+ Supply Net            : VSS
+ Current Scope         : raven_soc
+ Operating Voltage     : -- Maximum --    -- Minimum --   
+                            (0.00)           (0.00)
+
+ Supply States         : No supply states defined for the net. 
+ Power Domain          : PD PDs(*) PDm  
+
+------------------------------------------------------------------------------
+
+ Supply Net            : VDD
+ Current Scope         : raven_soc
+ Operating Voltage     : -- Maximum --    -- Minimum --   
+                            (0.60)           (0.60)
+
+ Supply States         : No supply states defined for the net. 
+ Power Domain          : PD PDs(*) PDm  
+
+------------------------------------------------------------------------------
+
+ Supply Net            : VDDh
+ Current Scope         : raven_soc
+ Operating Voltage     : -- Maximum --    -- Minimum --   
+                            (0.72)           (0.72)
+
+ Supply States         : No supply states defined for the net. 
+ Power Domain          : PD PDs PDm  
+
+------------------------------------------------------------------------------
+
+ Supply Net            : VSS
+ Current Scope         : raven_soc
+ Operating Voltage     : -- Maximum --    -- Minimum --   
+                            (0.00)           (0.00)
+
+ Supply States         : No supply states defined for the net. 
+ Power Domain          : PD PDs(*) PDm  
+
+------------------------------------------------------------------------------
+1

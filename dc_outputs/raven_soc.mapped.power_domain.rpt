@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : power_domain
+Design : raven_soc
+Version: T-2022.03-SP4
+Date   : Tue May 13 18:03:08 2025
+****************************************
+
+------------------------------------------------------------------------------
+
+ Power Domain             : simpleuart/PD
+ Current Scope            : raven_soc
+ Elements                 : simpleuart
+ Available Supply Nets    : VDD, VSS, VDD, VDDh, VSS
+ Available Supply Sets    : simpleuart/PD.primary, PDs.primary
+
+ Connections                -- Power --             -- Ground --
+ Primary:                   simpleuart/VDD          simpleuart/VSS
+   (Max Op. Voltage)         (0.60)                  (0.00)
+ Default Isolation:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+ Default Retention:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+
+------------------------------------------------------------------------------
+
+ Power Domain             : PDs
+ Current Scope            : raven_soc
+ Elements                 : <top_level>
+ Available Supply Nets    : VDD, VDDh, VSS
+ Available Supply Sets    : PDs.primary
+
+ Connections                -- Power --             -- Ground --
+ Primary:                   VDD                     VSS
+   (Max Op. Voltage)         (0.60)                  (0.00)
+ Default Isolation:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+ Default Retention:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+
+------------------------------------------------------------------------------
+
+ Power Domain             : spimemio/PDm
+ Current Scope            : raven_soc
+ Elements                 : spimemio
+ Available Supply Nets    : VDD, VSS, VDDo, VDD, VDDh, VSS
+ Available Supply Sets    : spimemio/PDm.primary, PDs.primary
+
+ Connections                -- Power --             -- Ground --
+ Primary:                   spimemio/VDD            spimemio/VSS
+   (Max Op. Voltage)         (0.72)                  (0.00)
+ Default Isolation:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+ Default Retention:            -                       -
+   (Max Op. Voltage)          (-)                     (-)
+
+------------------------------------------------------------------------------
+1

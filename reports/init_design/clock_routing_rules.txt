@@ -1,0 +1,10 @@
+Information: The command 'report_clock_routing_rules' cleared the undo history. (UNDO-016)
+****************************************
+ Report : clock routing rules
+ Design : raven_soc
+ Date   : Thu May 29 16:11:14 2025
+****************************************
+   Design Base; Net Type: sink;     Rule: rm_leaf; Min Layer: M2; Max Layer: M8
+   Design Base; Net Type: internal; Rule: rm_2w2s_shield_list; Min Layer: M2; Max Layer: M8
+   Design Base; Net Type: root;     Rule: rm_2w2s_shield_list; Min Layer: M2; Max Layer: M8
+
